@@ -9,8 +9,7 @@ export const Navbar = () => {
       <div className="navbar-left">
         {/* Seu ícone está na pasta 'public', então podemos usar /icon.jpg */}
         <img src="/icon.jpg" alt="Logo Museum" className="navbar-logo" /> 
-        <a href="/Home">INÍCIO</a>
-        <a href="#">ARTISTAS</a>
+        <a href="/Home">HOME</a>
         <a href="#">AGENDA</a>
         <a href="#">SOBRE</a>
         <a href="#">CONTATO</a>

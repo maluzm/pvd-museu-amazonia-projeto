@@ -2,14 +2,16 @@ import './Hero.css'
 
 import heroBackgroundImage from '../../assets/teatro.jpg'
 
+import { Link } from 'react-router-dom'
+
 export const Hero = () => {
     return (
         <section className="hero-container" style={{ backgroundImage: `url(${heroBackgroundImage})` }}>
             <div className="hero-content">
                 <h1>MUSEU DE MANAUS</h1>
-                <button className="hero-btn">
+                <Link to="/ingressos" className="hero-btn">
                     INGRESSOS
-                </button>
+                </Link>
             </div>
 
         </section>
