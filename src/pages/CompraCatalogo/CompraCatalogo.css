@@ -28,6 +28,11 @@
   margin-top: 0;
 }
 
+.ticket-description {
+  color: #051a07;
+  background-color: #fff;
+}
+
 .ticket-price {
   font-size: 2rem;
   font-weight: bold;
@@ -36,10 +41,15 @@
 }
 
 .ticket-features {
+  background-attachment: fixed;
   list-style-type: '✓ ';
   padding-left: 1.5rem;
   min-height: 100px;
-  color: #555;
+  color: #fff;
+}
+
+.ticket-features li {
+  color: #051a07;
 }
 
 .ticket-buy-btn {

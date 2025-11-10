@@ -1,9 +1,9 @@
-import { useCart } from '../../context/CartContext';
+import { useCartStore } from '../../store/cartStore';
 import './Carrinho.css';
 import { Link } from 'react-router-dom';
 
 export const Carrinho = () => {
-  const { cartItems, updateQuantity, removeFromCart } = useCart();
+  const { cartItems, updateQuantity, removeFromCart } = useCartStore();
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const total = subtotal; // Adicionar taxas/descontos aqui se houver

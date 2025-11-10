@@ -1,4 +1,4 @@
-import { useCart } from '../../context/CartContext';
+import { useCartStore } from '../../store/cartStore';
 import './CompraCatalogo.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ const TICKET_TYPES = [
 ];
 
 export const CompraCatalogo = () => {
-  const { addToCart } = useCart();
+  const { addToCart } = useCartStore();
   const navigate = useNavigate();
 
   const handleAddToCart = (ticket: typeof TICKET_TYPES[0]) => {
@@ -37,7 +37,6 @@ export const CompraCatalogo = () => {
       name: ticket.name,
       price: ticket.price
     });
-    // Opcional: mostrar uma notificação "Adicionado!"
   };
 
   return (
@@ -48,15 +47,17 @@ export const CompraCatalogo = () => {
         {TICKET_TYPES.map(ticket => (
           <div className="ticket-card" key={ticket.id}>
             <h3>{ticket.name}</h3>
-            <p className="ticket-price">R$ {ticket.price.toFixed(2)}</p>
+
             <p className="ticket-description">{ticket.description}</p>
+
+            <p className="ticket-price">R$ {ticket.price.toFixed(2)}</p>
+
             <ul className="ticket-features">
               {ticket.features.map(feature => <li key={feature}>{feature}</li>)}
             </ul>
             <button 
               className="ticket-buy-btn" 
-              onClick={() => handleAddToCart(ticket)}
-            >
+              onClick={() => handleAddToCart(ticket)}>
               Comprar
             </button>
           </div>
@@ -66,8 +67,7 @@ export const CompraCatalogo = () => {
       <button 
         className="hero-btn" 
         onClick={() => navigate('/carrinho')}
-        style={{ marginTop: '2rem' }}
-      >
+        style={{ marginTop: '2rem' }}>
         Ir para o Carrinho
       </button>
     </div>
