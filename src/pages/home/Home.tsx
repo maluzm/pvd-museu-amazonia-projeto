@@ -3,21 +3,24 @@ import './home.css';
 
 // 1. Importar os componentes que criamos
 import { Hero } from '../../components/Hero/Hero';
-import { CardList } from '../../components/CardList/CardList';
+import { FeaturedExhibitions } from '../../components/FeaturedExhibitions/FeaturedExhibitions';
+import { MainExhibitions } from '../../components/MainExhibitions/MainExhibitions';
+import { WeeklySchedule } from '../../components/WeeklySchedule/WeeklySchedule';
 
 export const Home = () => {
   return (
-    // <main> é uma boa tag para o conteúdo principal
+    //hero e main ficam fora da div, por terem imagem de fundo
     <main>
       <Hero />
 
-      {/* Vamos adicionar as outras seções aqui */}
+      <FeaturedExhibitions />
+
+      {/* As outra seções ficam dentro por terem o mesmo fundo, sendo apenas centralizado na tela */}
       <div className="home-content-wrapper">
-        <CardList />
+        <MainExhibitions />
+
+        <WeeklySchedule />
         
-        {/* A próxima seção "Exposições em destaque" é outro CardList,
-          mas com dados diferentes! Você pode reutilizar o componente.
-        */}
       </div>
     </main>
   );

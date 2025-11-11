@@ -5,7 +5,7 @@ import 'react-calendar/dist/Calendar.css'; // Estilo padrão
 import './CompraData.css'; // Nosso estilo customizado
 
 // Importe a mesma imagem do Hero
-import heroBackgroundImage from '../../assets/teatro.jpg';
+import heroBackgroundImage from '../../assets/Hero/teatro.jpg';
 
 type CalendarValue = Date | null;
 
